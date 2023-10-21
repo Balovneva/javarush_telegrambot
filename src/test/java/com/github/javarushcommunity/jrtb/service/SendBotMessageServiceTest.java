@@ -1,6 +1,6 @@
 package com.github.javarushcommunity.jrtb.service;
 
-import com.github.javarushcommunity.jrtb.bot.JavaRushBot;
+import com.github.javarushcommunity.jrtb.bot.JavaRushTelegramBot;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,11 +12,11 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class SendBotMessageServiceTest {
 
     private SendBotMessageService sendBotMessageService;
-    private JavaRushBot javaRushBot;
+    private JavaRushTelegramBot javaRushBot;
 
     @BeforeEach
     public void init() {
-        javaRushBot = Mockito.mock(JavaRushBot.class);
+        javaRushBot = Mockito.mock(JavaRushTelegramBot.class);
         sendBotMessageService = new SendBotMessageServiceImpl(javaRushBot);
     }
 
