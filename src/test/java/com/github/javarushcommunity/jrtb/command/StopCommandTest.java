@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import static com.github.javarushcommunity.jrtb.command.CommandName.STOP;
 import static com.github.javarushcommunity.jrtb.command.StopCommand.STOP_MESSAGE;
 
-@DisplayName("Unit-lwvel test for StopCommand")
+@DisplayName("Unit-level test for StopCommand")
 public class StopCommandTest extends AbstractCommandTest{
     @Override
     String getCommandName() {

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  jrtb-db:
+    image: mysql:8.0.31
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'dev_jrtb_db'
+      MYSQL_USER: 'dev_jrtb_db_user'
+      MYSQL_PASSWORD: 'dev_jrtb_db_password'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3307:3306'
+    expose:
+      - '3307'

@@ -6,27 +6,23 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import static com.github.javarushcommunity.jrtb.command.CommandUtils.getChatId;
 
-public class StopCommand implements Command {
+public class StatCommand implements Command {
+
     private final SendBotMessageService sendBotMessageService;
     private final TelegramUserService telegramUserService;
 
-    public static final String STOP_MESSAGE = "Дективировал все ваши подписки \uD83D\uDE1F.";
+    public final static String STAT_MESSAGE = "JavaRush Telegram Bot использует %s человек";
 
-    public StopCommand(SendBotMessageService sendBotMessageService,
-                       TelegramUserService telegramUserService) {
+    public StatCommand(SendBotMessageService sendBotMessageService,
+                        TelegramUserService telegramUserService) {
         this.sendBotMessageService = sendBotMessageService;
         this.telegramUserService = telegramUserService;
     }
 
     @Override
     public void execute(Update update) {
-        String chatId = getChatId(update);
-        telegramUserService.findByChatId(chatId).ifPresent(
-                user -> {
-                    user.setActive(false);
-                    telegramUserService.save(user);
-                });
-
-        sendBotMessageService.sendMessage(chatId, STOP_MESSAGE);
+        int activeUserCount = telegramUserService.retrieveAllActiveUsers().size();
+        sendBotMessageService.sendMessage(getChatId(update),
+                String.format(STAT_MESSAGE, activeUserCount));
     }
 }
