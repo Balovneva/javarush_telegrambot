@@ -1,0 +1,1 @@
+DELETE from tg_user;
