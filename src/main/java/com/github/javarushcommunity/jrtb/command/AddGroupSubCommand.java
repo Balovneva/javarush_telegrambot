@@ -63,11 +63,12 @@ public class AddGroupSubCommand implements Command {
                 .collect(Collectors.joining());
 
         String message = "Чтобы подписаться на группу - передай команду вместе с ID группы.\n" +
-                "Например /addGroupSub 16.\n\n" +
+                "Например %s 16.\n\n" +
                 "я подготовил список всех групп - выбирай какую хочешь \n\n" +
                 "имя группы - ID группы \n\n %s";
 
-        sendBotMessageService.sendMessage(chatId, String.format(message, groupIds));
+        sendBotMessageService.sendMessage(chatId, String.format(message,
+                ADD_GROUP_SUB.getCommandName(), groupIds));
     }
 }
 
