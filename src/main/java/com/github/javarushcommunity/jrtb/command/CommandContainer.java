@@ -23,6 +23,8 @@ public class CommandContainer {
                         groupSubService))
                 .put(LIST_GROUP_SUB.getCommandName(), new ListGroupSubCommand(sendBotMessageService,
                         telegramUserService))
+                .put(DELETE_GROUP_SUB.getCommandName(), new DeleteGroupSubCommand(telegramUserService,
+                        sendBotMessageService, groupSubService))
                 .put(NO.getCommandName(), new NoCommand(sendBotMessageService))
                 .build();
 
