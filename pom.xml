@@ -12,14 +12,14 @@
 
     <groupId>com.github.javarushcommunity</groupId>
     <artifactId>javarush-telegrambot</artifactId>
-    <version>0.5.0-SNAPSHOT</version>
+    <version>0.7.0-SNAPSHOT</version>
     <name>Javarush TelegramBot</name>
     <description>Telegram bot for Javarush from community to community</description>
 
     <properties>
         <java.version>17</java.version>
         <telegrambot.starter.version>6.5.0</telegrambot.starter.version>
-        <unirest.version>3.14.2</unirest.version>
+        <unirest.version>3.11.01</unirest.version>
         <guava.version>32.1.3-jre</guava.version>
     </properties>
 
