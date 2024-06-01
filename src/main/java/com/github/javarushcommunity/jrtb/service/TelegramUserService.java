@@ -37,5 +37,5 @@ public interface TelegramUserService {
      * @param chatId provided Chat ID.
      * @return {@link TelegramUser} with provided chat ID or null otherwise.
      */
-    Optional<TelegramUser> findByChatId(String chatId);
+    Optional<TelegramUser> findByChatId(Long chatId);
 }

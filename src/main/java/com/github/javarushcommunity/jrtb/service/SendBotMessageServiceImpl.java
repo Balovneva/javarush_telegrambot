@@ -21,7 +21,7 @@ public class SendBotMessageServiceImpl implements SendBotMessageService {
     }
 
     @Override
-    public void sendMessage(String chatId, String message) {
+    public void sendMessage(Long chatId, String message) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.enableHtml(true);
@@ -36,7 +36,7 @@ public class SendBotMessageServiceImpl implements SendBotMessageService {
     }
 
     @Override
-    public void sendMessage(String chatId, List<String> messages) {
+    public void sendMessage(Long chatId, List<String> messages) {
         if (isEmpty(messages)) return;
 
         messages.forEach(m -> sendMessage(chatId, m));
