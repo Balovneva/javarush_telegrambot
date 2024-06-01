@@ -1,5 +1,6 @@
 # JavaRush Telegram bot
-![](../../Desktop/Разработка/TG Bot/2.png)
+![2](https://github.com/Balovneva/javarush_telegrambot/assets/122821058/337cf3bc-3aaa-4224-af23-f99f124a879d)
+
 
 JavaRush Telegram bot from community for community.
 ## Idea
@@ -16,7 +17,8 @@ User can set an inactive bot and do not receive notifications
 User can restart getting notifications
 ## Find new posts workflow
 The workflow of finding new posts and send them to subscribers can be viewed here:
-![](../../Desktop/Разработка/TG Bot/119827993-6c22ec80-bf02-11eb-8759-83bea483db93.png)
+![119827993-6c22ec80-bf02-11eb-8759-83bea483db93](https://github.com/Balovneva/javarush_telegrambot/assets/122821058/f649e15b-28f8-465c-a585-256934795d85)
+
 ## Deployment
 Deployment process as easy as possible:
 Required software:
