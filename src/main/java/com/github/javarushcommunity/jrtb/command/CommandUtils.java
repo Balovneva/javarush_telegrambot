@@ -13,8 +13,8 @@ public class CommandUtils {
      * @param update provided {@link Update}
      * @return chatId from provided {@link Update} object.
      */
-    public static String getChatId(Update update) {
-        return update.getMessage().getChatId().toString();
+    public static Long getChatId(Update update) {
+        return update.getMessage().getChatId();
     }
 
     /**

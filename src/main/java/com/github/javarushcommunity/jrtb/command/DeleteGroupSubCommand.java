@@ -43,7 +43,7 @@ public class DeleteGroupSubCommand implements Command {
             return;
         }
         String groupId = getMessage(update).split(SPACE)[1];
-        String chatId = getChatId(update);
+        Long chatId = getChatId(update);
         if (isNumeric(groupId)) {
             Optional<GroupSub> optionalGroupSub = groupSubService.findById(Integer.valueOf(groupId));
             if (optionalGroupSub.isPresent()) {
@@ -60,10 +60,9 @@ public class DeleteGroupSubCommand implements Command {
             sendBotMessageService.sendMessage(chatId, "Неправильный формат ID группы.\n" +
                     "ID должно быть целым положительным числом.");
         }
-
     }
 
-    private void sendGroupIdList(String chatId) {
+    private void sendGroupIdList(Long chatId) {
         String message;
 
         List<GroupSub> groupSubs = telegramUserService.findByChatId(chatId)
@@ -81,9 +80,7 @@ public class DeleteGroupSubCommand implements Command {
                     "Например: /deleteGroupSub 16\n\n" +
                     "Я подготовил список групп, на которые ты подписан \n\n" +
                     "имя группы - ID группы \n\n" + "%s", userGroupSubData);
-
         }
-
         sendBotMessageService.sendMessage(chatId, message);
     }
 }
